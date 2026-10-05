@@ -123,6 +123,121 @@ sudo mount /dev/sdb1 /mnt
 This makes the filesystem located on `/dev/sdb1` accessible through `/mnt`.
 
 ---
+---
+
+## `/opt` - Optional Software
+
+Used for installing optional or third-party software packages that are not part of the default system installation.
+
+Applications installed here often have their own subdirectory.
+
+For example:
+
+```text
+/opt/application/
+/opt/tool/
+```
+
+This helps keep additional software separated from the core system files.
+
+---
+
+## `/root` - Root User Home Directory
+
+The home directory of the `root` user, which is the system administrator account with the highest privileges.
+
+```text
+/root/
+```
+
+Unlike regular users, whose home directories are usually located under `/home`, the root user's home directory is located directly under `/`.
+
+For comparison:
+
+```text
+/home/mateo/    → Regular user
+/root/          → Root user
+```
+
+---
+
+## `/sbin` - System Administration Binaries
+
+Contains binaries primarily used for system administration and maintenance tasks.
+
+Historically, these commands were mainly intended to be executed by the `root` user or users with elevated privileges.
+
+> **Note:** On many modern Linux distributions, `/sbin` may be a symbolic link to `/usr/sbin`.
+
+---
+
+## `/srv` - Service Data
+
+Contains data used or provided by services running on the system.
+
+For example, a server may store data related to services such as:
+
+```text
+/srv/www/
+/srv/ftp/
+```
+
+The exact structure depends on the services configured on the system.
+
+---
+
+## `/tmp` - Temporary Files
+
+Used by applications and the operating system to store temporary files.
+
+```text
+/tmp/
+```
+
+Files stored here are generally not intended for permanent storage and may be automatically deleted by the system.
+
+Because many users and applications can use `/tmp`, its permissions and contents can also be relevant when analyzing the security of a Linux system.
+
+---
+
+## `/usr` - User System Resources
+
+Contains a large portion of the programs, libraries, documentation, and other read-only resources used by the system and its users.
+
+Some important subdirectories include:
+
+```text
+/usr/bin/       → Most user commands
+/usr/sbin/      → System administration commands
+/usr/lib/       → Libraries
+/usr/share/     → Architecture-independent shared data
+/usr/local/     → Locally installed software
+```
+
+> **Note:** Despite its name, `/usr` is not the directory where individual user files are stored. Personal user files are normally located under `/home`.
+
+---
+
+## `/var` - Variable Data
+
+Contains data that is expected to change while the system is running.
+
+Common examples include:
+
+```text
+/var/log/       → System and application logs
+/var/cache/     → Cached data
+/var/lib/       → Application state and databases
+/var/spool/     → Queued data and tasks
+```
+
+For example, system logs can often be found under:
+
+```text
+/var/log/
+```
+
+This directory can be particularly useful when troubleshooting or analyzing activity on a Linux system.
 
 ## Key Takeaway
 
